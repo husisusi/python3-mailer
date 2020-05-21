@@ -1,7 +1,7 @@
 Py3Mailer
 ========
 **Simple python bulk mailer script.**
- Original and inspired from python-mailer & Jonathan Bydendyk
+ Based and inspired from python-mailer & Jonathan Bydendyk
 Send bulk html emails from the commandline or in your python3 script by specifying a database of recipients in csv form, a html template with var placeholders and a subject line.
 
 Requirements
