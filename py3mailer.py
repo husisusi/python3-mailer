@@ -10,6 +10,7 @@ import sys
 from datetime import datetime
 from email import message
 from time import sleep
+from validate_email import validate_email
 
 import config  # Our file config.py
 
@@ -67,7 +68,8 @@ class Py3Mailer():
         if not email_address or len(email_address) < 5:
             print(1)
             return None
-        if not re.match(r'^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email_address):
+        is_valid = validate_email(email_address=(email_address), check_mx=False, check_regex=True, smtp_timeout=10, dns_timeout=10, use_blacklist=True)
+        if is_valid is False:
             return None
         return email_address
 
